@@ -33,7 +33,7 @@ insert into member(id, pass, name) values('kth', '1234', '김태희');
 insert into member(id, pass, name) values('ehw', '1234', '이현우');
 insert into member(id, pass, name) values('kuh', '1234', '김우혁');
 
-select * from member;
+select * from board;
 
 
 insert into board(num, title, content, id, postdate, visitcount)
@@ -47,9 +47,9 @@ insert into board(num, title, content, id, postdate, visitcount)
 insert into board(num, title, content, id, postdate, visitcount)
 	values(seq_board_num.nextval, '제목5', '내용5', 'kth', sysdate, 0);
 
+select*from member where id='kth' and pass='1234';
 
-
-
+select count(*) from board where title like '%제목%'
 
 
 

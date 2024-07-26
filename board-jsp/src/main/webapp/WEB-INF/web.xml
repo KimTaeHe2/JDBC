@@ -11,6 +11,27 @@
   	<param-value>web.xml에서 만든 초기화 매개값</param-value>
   </context-param><!-- jsp에서 web.xml 값을 가져오는 연습 -->
   
+  <!-- JDBC용 코드 삽입 : 컴파일 없이 수정가능 -->
+  <context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OracleURL</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OracleId</param-name>
+  	<param-value>boardjsp</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OraclePwd</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+  
   <!-- 톰켓에서 에러페이지처리를 커스텀처리 -->
   <error-page>
   	<error-code>404</error-code>
@@ -24,5 +45,26 @@
   	<error-code>500</error-code>
   	<location>/02ImplicitObject/Exception.jsp</location>
   </error-page>
+  
+  <!-- 세션 관리하기 -->
+  <session-config>
+  	<session-timeout>20</session-timeout><!-- 세션의 만료시간 20분으로 설정 -->
+  </session-config>
+  
+  
+  
+   <!-- POST 방식의 한글 깨짐 방지를 위한 필터 설정(필터는 톰켓이 클라이언트의 요청을 처리 전에 걸러서 보낸다) -->
+  <filter>
+    <filter-name>SetCharEncoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+      <init-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping><!--  매핑은 위에서 만든 필터를 적용할 범위 설정 -->
+    <filter-name>SetCharEncoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   
 </web-app>
