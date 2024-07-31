@@ -1,22 +1,19 @@
 package memberShip;
 
 public class MemberDTO {
-	// member 객체
+	// member 객체 
 	
-	// 필드
+	//필드
+	private String id ;
+	private String pass ;
+	private String name ;
+	private String regdate ; 
 	
-	private String id;
-	private String pass;
-	private String name;
-	private String regdate;
-	
-	
-	
-	// 기본생성자
-		public MemberDTO() {}
-		
-	// 메서드
-		
+	public MemberDTO() {
+		// 기본생성자
+	}
+
+	// 게터-세터 메서드
 	public String getId() {
 		return id;
 	}
@@ -48,5 +45,7 @@ public class MemberDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	
+	
 	
 }

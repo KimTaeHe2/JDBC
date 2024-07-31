@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.JspWriter;
 
@@ -61,5 +62,4 @@ public class JSFunction {
         }
         catch (Exception e) {}
     }
-
 }

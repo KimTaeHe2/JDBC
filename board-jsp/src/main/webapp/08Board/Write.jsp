@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./IsLoggedIn.jsp"%> <!-- 로그인 판단 -->
+<%@ include file="./IsLoggedIn.jsp" %> <!-- 로그인 판단 -->
 <!DOCTYPE html><html><head><meta charset="UTF-8">
+<title>Write.jsp : 회원로그인 후 게시물 작성</title>
 <script type="text/javascript">
 function validateForm(form) {  // 폼 내용 검증
     if (form.title.value == "") {
@@ -22,17 +23,17 @@ function validateForm(form) {  // 폼 내용 검증
 <h2>회원제 게시판 - 글쓰기(Write)</h2>
 <form name="writeFrm" method="post" action="WriteProcess.jsp"
       onsubmit="return validateForm(this);">
-    <table border="1" width="100%">
+    <table border="1" width="90%">
         <tr>
-            <td align="center">제목</td>
+            <td>제목</td>
             <td>
-                <input type="text" name="title" style="width: 100%;" />
+                <input type="text" name="title" style="width: 90%;" />
             </td>
         </tr>
         <tr>
-            <td align="center">내용</td>
+            <td>내용</td>
             <td>
-                <textarea name="content" style="width: 100%; height: 100px;"></textarea>
+                <textarea name="content" style="width: 90%; height: 100px;"></textarea>
             </td>
         </tr>
         <tr>

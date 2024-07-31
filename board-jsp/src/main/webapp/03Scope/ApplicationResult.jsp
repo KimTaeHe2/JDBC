@@ -3,22 +3,20 @@
 <%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>ApplicationResult : 결과물 확인</title></head>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Application 결과 확인용</title></head>
 <body>
-
-	<h2>application 영역 값 읽어보기</h2>
+	<h2> application 영역 값 읽어보기</h2>
 	<%
-		Map<String, Person> maps =(Map<String, Person>)application.getAttribute("Amaps");
-		Set<String> keys = maps.keySet(); // Map에 있는 모든 키를 가져온다.
-		for(String key : keys){
-			Person person = maps.get(key); // key를 이용해 객체를 만듬
-			out.print(String.format("이름 : %s, 나이 : %d <br>", person.getName(), person.getAge()));
-		}
+	Map<String, Person> maps = (Map<String, Person>)application.getAttribute("Amaps");
 	
+	Set<String> keys = maps.keySet(); // Map에 있는 모든 키를 가져와
+	for(String key : keys){
+		Person person = maps.get(key); // key를 이용해 객체를 만듬
+		out.print(String.format("이름 : %s , 나이 : %d <br>", person.getName(), person.getAge()));
+		 
+	}
+		
 	%>
-	
-	
 
 </body>
 </html>

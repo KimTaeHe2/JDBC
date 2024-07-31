@@ -5,7 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CookieManager {
-	 // 명시한 이름, 값, 유지 기간 조건으로 새로운 쿠키를 생성합니다.
+	
+    // 명시한 이름, 값, 유지 기간 조건으로 새로운 쿠키를 생성합니다.
     public static void makeCookie(HttpServletResponse response, String cName,
             String cValue, int cTime) {
         Cookie cookie = new Cookie(cName, cValue); // 쿠키 생성

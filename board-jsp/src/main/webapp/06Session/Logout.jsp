@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Logout.jsp</title>
-</head>
-<body>
-	<%
-	session.removeAttribute("UserId"); // 세션 삭제
-	session.removeAttribute("UserName");
-	
-	session.invalidate(); // 세션 무효화
-	
-	response.sendRedirect("LoginForm.jsp"); // 로그인 화면으로 돌아가기
-	%>
+<%
+// 방법 1: 회원인증정보 속성 삭제 
+session.removeAttribute("UserId");
+session.removeAttribute("UserName");
 
-</body>
-</html>
+// 방법 2: 모든 속성 한꺼번에 삭제 
+session.invalidate();
+
+// 속성 삭제 후 페이지 이동 
+response.sendRedirect("LoginForm.jsp");
+%>
